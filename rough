@@ -1,2 +1,14 @@
-from logging import PercentStyle
-from optparse import Values
+# from logging import PercentStyle
+# from optparse import Values
+
+
+# a = (5**0.5)
+# print(a*5)
+
+
+
+if len(b) >= 6:
+        c = b.upper()
+    else:
+        d = b.lower()
+        print(c)
