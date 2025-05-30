@@ -7,8 +7,16 @@
 
 
 
-if len(b) >= 6:
-        c = b.upper()
-    else:
-        d = b.lower()
-        print(c)
+# if len(b) >= 6:
+#         c = b.upper()
+#     else:
+#         d = b.lower()
+#         print(c)
+
+
+
+a = []
+for i in range(5):
+  x = input(f"Enter input {i+1}: ")
+  a.append(x)
+print("You entered:", a)

@@ -5,4 +5,9 @@ for item in a:
         continue
     else:
         print(set(item))
-        
+        \
+
+stop_words = ['if', 'else']
+
+for word in stop_words:
+    a.remove(word)
