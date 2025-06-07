@@ -1,0 +1,91 @@
+Project 1 - BLR : Advanced Task Management with Team
+
+
+Collaboration
+
+
+Description
+Build a sophisticated project and task management system that handles multiple teams,
+project timelines, resource allocation, and provides comprehensive analytics on
+productivity and project health.
+Core Requirements
+Multi-project task organization
+Team member assignment and workload balancing
+Gantt chart functionality with dependency tracking
+Time tracking and productivity analysis
+Milestone and deadline management
+Resource allocation optimization
+Progress reporting and analytics dashboard
+Technical Specifications
+
+
+
+# Expected functions (minimum):
+def create_project(project_id, name, start_date, end_date, priority)
+def add_team_member(member_id, name, role, skill_set, hourly_rate)
+def create_task(task_id, project_id, title, description, estimated_hours)
+def assign_task(task_id, member_id, priority_level)
+def set_task_dependency(task_id, depends_on_task_id)
+def log_time(member_id, task_id, hours_worked, date)
+def update_task_progress(task_id, completion_percentage)
+def calculate_project_health(project_id)
+def optimize_resource_allocation(project_id)
+def generate_gantt_data(project_id)
+def analyze_team_productivity(time_period)
+def forecast_project_completion(project_id)
+
+
+
+
+Edge Cases to Handle
+Circular task dependencies
+Team member unavailability and replacement scenarios
+Project scope changes affecting timeline
+Resource conflicts across multiple projects
+Task estimation vs actual time variance
+Critical path changes due to delays
+Budget overruns and cost tracking
+
+
+Expected Output Examples
+
+
+=== PROJECT DASHBOARD ===
+Active Projects: 5
+Team Members: 12
+Total Tasks: 89 (32 completed, 41 in progress, 16 pending)
+Project Health Scores:
+
+
+Project Health Scores:
+ E-commerce Platform: 92% (On track)
+ Mobile App v2.0: 74% (Minor delays)
+ Data Migration: 45% (Critical issues)
+
+
+=== TEAM PRODUCTIVITY ===
+March 2025 Performance:
+Avg. Hours/Week: 38.5
+Productivity Score: 87%
+On-time Delivery: 76%
+
+
+Top Performers:
+1. Sarah Johnson: 94% task completion rate
+2. Mike Chen: 40.2 hours logged, 12 tasks completed
+
+
+=== RESOURCE ALLOCATION ===
+Overallocated Members:
+- John Smith: 125% capacity (50h/40h week)
+- Lisa Wong: 110% capacity (44h/40h week)
+
+
+Available Capacity:
+- David Kumar: 65% utilized (26h available)
+- Emma Wilson: 70% utilized (12h available)
+
+
+Recommendations:
+- Redistribute 2 tasks from John to David
+- Consider hiring additional frontend developer

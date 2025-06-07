@@ -15,8 +15,121 @@
 
 
 
-a = []
-for i in range(5):
-  x = input(f"Enter input {i+1}: ")
-  a.append(x)
-print("You entered:", a)
+# a = []
+# for i in range(5):
+#   x = input(f"Enter input {i+1}: ")
+#   a.append(x)
+# print("You entered:", a)
+
+
+
+
+
+
+# members = {
+#     "m1": {
+#         "name": "raja",
+#         "role": "coding",
+#         "skill_set": "python",
+#         "hourly_rate": "6%",
+#         "assigned_tasks": []  # Added to track assigned tasks
+#     }
+# }
+
+# project = {
+#     "p1": {
+#         "name": "project",
+#         "start_date": "30-05",
+#         "end_date": "30-06",
+#         "priority": 1,
+#         "status": "active"
+#     }
+# }
+
+# task = {
+#     "t1": {
+#         "title": "task-1",
+#         "description": "complete task",
+#         "estimates_hours": "10 hours",
+#         "project_id": "p1",
+#         "assigned_to": None  # Added to track assignment
+#     }
+# }
+
+# def assign_task(task_id, member_id, priority_level):
+#     # Check if task exists
+#     if task_id not in task:
+#         return "Task not found"
+    
+#     # Check if member exists
+#     if member_id not in members:
+#         return "Member not found"
+    
+#     # Check if member already has a task with same or higher priority
+#     for t in members[member_id]["assigned_tasks"]:
+#         if task[t]["project_id"] in project:  # Check if project exists
+#             if project[task[t]["project_id"]]["priority"] <= priority_level:
+#                 return "You already have a task with same or higher priority"
+    
+#     # Assign the task
+#     task[task_id]["assigned_to"] = member_id
+#     members[member_id]["assigned_tasks"].append(task_id)
+    
+#     return f"Task {task_id} assigned to {member_id} successfully"
+
+# # Test
+# a = assign_task("t1", "m1", 1)
+# print(a)
+
+
+
+
+
+
+
+
+
+
+class Book:
+    def __init__(self, name, stock, id):
+        self.id = id
+        self.name = name
+        self.stock = stock
+
+class Library:
+    def __init__(self, books):
+        self.books = books
+    
+    def issue_book(self, id):
+        for book in self.books:
+            if book.id == id:  # First check if this is the right book
+                if book.stock >= 1:  # Then check stock
+                    book.stock -= 1
+                    return f"Issued '{book.name}'"  # Optional return message
+                else:
+                    return "Sorry, no stock"
+        return "Book not found"  # If we finish the loop without finding the book
+
+    def collect_book(self, id):
+        for book in self.books:
+            if book.id == id:
+                book.stock += 1
+                return f"Collected '{book.name}' back"
+        return "Book not found"
+
+# Testing
+book_1 = Book("Atomic Structures", 10, 123)
+book_2 = Book("Rich dad poor dad", 0, 456)
+library = Library([book_1, book_2])
+
+# Test issuing a book
+print(library.issue_book(123))  # Should issue and show message
+print(library.books[0].stock)   # Should be 9 now
+
+# Test issuing when no stock
+print(library.issue_book(456))   # Should say "Sorry, no stock"
+print(library.books[1].stock)    # Should remain 0
+
+# Test collecting a book
+print(library.collect_book(456)) # Should increase stock to 1
+print(library.books[1].stock)    # Should now be 1
